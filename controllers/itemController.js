@@ -60,10 +60,16 @@ exports.show_update_item_form = async (req, res, next) => {
         const categories = await categoryModel.find({ name: { $ne: item.category.name } });
         res.render('updateItem', { item: item, categories: categories });
 
-        // try {
-        //     res.render('updateItem', { item: item, categories: categories });
-        // } catch (err) {
-        //     res.status(500).send(err);
-        // }
     });
+};
+
+exports.update_item = async (req, res, next) => {
+    const item = await itemModel.findByIdAndUpdate(req.params.id, req.body);
+    try{
+    if (!item) res.status(404).send("No item found");
+        res.redirect(`/items/update/${req.params.id}`);
+    }
+        catch (err) {
+        res.status(500).send(err);
+    }
 };

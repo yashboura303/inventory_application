@@ -32,5 +32,7 @@ router.get('/items/:id', item_controller.show_item);
 
 router.get('/items/update/:id', item_controller.show_update_item_form);
 
+router.post('/items/update/:id', item_controller.update_item);
+
 
 module.exports = router;

@@ -4,9 +4,10 @@ const itemModel = require('../models/items.js');
 
 
 exports.home_page = async (req, res, next) => {
-    const categories = await categoryModel.find({});
+    const categories = await categoryModel.find({}).countDocuments();
+    const items = await itemModel.find({}).countDocuments();
     try {
-        res.render('index');
+        res.render('index', {categories, items});
     } catch (err) {
         res.status(500).send(err);
     }

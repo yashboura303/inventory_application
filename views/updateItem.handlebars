@@ -12,7 +12,7 @@
     <label for="">Category</label>
     
     <select class="form-control" name="category" id="exampleFormControlSelect1">
-      <option selected="true" {{item.category._id}} >{{item.category.name}}</option>
+      <option selected="true" value="{{item.category._id}}" >{{item.category.name}}</option>
       {{#each categories}}
       <option value="{{this._id}}">{{this.name}}</option>
       {{/each}}
