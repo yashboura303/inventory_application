@@ -1,0 +1,8 @@
+<h4>Items</h4>
+<ul class="list-unstyled">
+  {{#each items}}
+<li><a href="{{this.category.url}}" class="text-info"><strong>Category</strong>:</a> {{this.category.name}}</li>
+    <li> <a href="{{this.url}}" class="text-primary"><strong>Name</strong>: {{this.name}}</a></li>
+    <br>
+  {{/each}}
+</ul>

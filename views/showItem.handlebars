@@ -1,0 +1,16 @@
+<div class="container  border border-dark p-3">
+	
+<ul class="list-unstyled font-italic font">
+  <li><strong>Name:</strong> {{item.name}}</li>
+  <li><strong>Description:</strong> {{item.description}}</li>
+    <li><strong>Price</strong>: {{item.price}}</li>
+
+<li><strong>In Stock</strong>: {{item.number_in_stock}}</li>
+</ul>
+
+<div class="row mb-2 ">
+	<a class=" mx-2 btn btn-outline-danger" href="delete/{{item._id}}">Delete</a>
+	<a class="btn btn-outline-info" href="update/{{item._id}}">Update</a>
+</div>
+</div>
+
